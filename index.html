@@ -1,0 +1,244 @@
+<!-- 
+
+      ************************************************************
+
+           ++++++++++++++    --------    +++++++++++++++++
+
+{   By ~Aryan Maurya Mr.perfect https://amsrportfolio.netlify.app  }
+
+           ++++++++++++++    --------    +++++++++++++++++
+
+      ************************************************************
+ -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>piano tils game </title>
+        <script src="main.js" defr></script>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=7" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta name="author" content="Aryan Maurya,another" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="favicon.png" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <meta
+          name="description"
+          content="This is online piano tils game build for your imporove thing skill in this domain by aryan maurya enjoy your game"
+        />
+        <meta name="keywords" content="piano tiles, music game, reflex game, piano challenge, tile tapping game, entertainment">
+    </head>
+    <body>
+        <div id = "loader">
+            <div id = "v" class = "loading-bars"></div>
+            <div id = "i" class = "loading-bars"></div>
+            <div id = "b" class = "loading-bars"></div>
+            <div id = "g" class = "loading-bars"></div>
+            <div id = "y" class = "loading-bars"></div>
+            <div id = "o" class = "loading-bars"></div>
+            <div id = "r" class = "loading-bars"></div>
+            <div id = "loading">Loading...</div>
+        </div>
+        <div id = "main">
+            <img src="https://imgur.com/CTaKUcC.jpg">
+            <div class = "line" id = "l-1"></div>
+            <div class = "line" id = "l-2"></div>
+            <div class = "line" id = "l-3"></div>
+            <div id = "bg"></div>
+            <div id = "new-page"><div id = "red-div"></div></div>
+            <div id = "music-page"></div>
+            <div id = "score"></div>
+            <div id = "progress">
+                <div id = "completed-progress"></div>
+                <div class = "checkpoints" id = "c-1"></div>
+                <div class = "checkpoints" id = "c-2"></div>
+                <div class = "checkpoints" id = "c-3"></div>
+            </div>
+            <div id = "stars">
+                <div class = "star" id = "star-1"></div>
+                <div class = "star" id = "star-2"></div>
+                <div class = "star" id = "star-3"></div>
+                <div class = "star" id = "star-4"></div>
+                <div class = "star" id = "star-5"></div>
+            </div>
+            <div id = "you-lost">
+                <div id = "yl-heading">YOU LOST</div>
+                <div id = "yl-stars">STARS EARNED</div>
+                <div id = "yl-back" onclick="Close();">BACK</div>
+            </div>
+        </div>
+        <div id = "menu">
+            <div id = "rules" onclick = "ShowRules();"></div>
+            <div id = "rp">
+                <div id = "back" onclick = "HideRules();">CLOSE</div><br>
+                Here is a brand new code for you guys after a long time, I hope you like it! This is a clone of "MAGIC TILES 3" game. So, all you have to do is touch the black blocks, you might as well need to use both of your hands. Once the song ends and the blocks stop falling, a small message for you, if you wrote the win code in the comment section, i might follow you (not everyone). Look out for your favourite singer's song! If you miss any of the black blocks or clicked at an empty space you will lose. The game might lag in between if the processor of your device is slow. In case the song stops in between then try to rerun the code (there is some issue with playing songs, idk why). (Code not for pc)
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/EZ0SN1q.jpg');background-position: -30px 0px;"></div>
+                <div class = "song-heading">Dance Monkey</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(0);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("dance monkey");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/jbTY1jY.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">Demons</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(1);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("demons");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/YPzBbMC.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">Shape Of You</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(2);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("shape of you");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/aZeIkcq.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">We Don't Talk</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(3);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("we dont talk anymore");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/Jtv29DI.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">Despacito</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(4);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("despacito");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/Q7N6u5e.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">Closer</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(5);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("closer");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/cs1Jaoy.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">StarBoy</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(6);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("starboy");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/9u80tdk.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">Treat You Better</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(7);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("treat you better");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/bFBYRXW.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">On My Way</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(8);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("on my way");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/tuyuMBK.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">Cardigan</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(9);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("cardigan");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <div class = "song">
+                <div class = "song-img" style = "background-image: linear-gradient(60deg, transparent 60%, purple 60%), url('https://imgur.com/AmYED3G.jpg');background-position: -30px 0px;background-size: cover;"></div>
+                <div class = "song-heading">Alag Aasman</div>
+                <div class = "empty-star s-1"></div><div class = "empty-star s-2"></div><div class = "empty-star s-3"></div>
+                <div class = "heart" onclick = "Liked(10);" style = 'background-image: url("https://imgur.com/12gZibr.jpg");'></div>
+                <div class = "play" onclick = 'StartGame("alag aasman");'><div class = "shine"></div>PLAY</div>
+            </div>
+            <br><br><br>
+            <a href="https://youtu.be/FIpmslk5oec" target="_blank">HOW I MADE IT</a>
+        </div>
+        <div id = "won-page">
+            <div id = "won-div">
+                <div id = "won-heading">YOU WON!</div>
+                <div id = "win-code">I would like to tell you about my favourite singer, he is Anuv Jain, check out his songs (they are hindi songs). Alag aasman, Baarishein, Mishri just to mention a few. I am glad you reached here, write #AnuvIsTheBest in the comment section, so that i can know you did it!</div>
+                <div id="fans">
+                    <div class = "fan" id = "f-1"></div>
+                    <div class = "fan" id = "f-2"></div>
+                </div>
+                <div class = "lines" id = "ls-1"></div>
+                <div class = "lines" id = "ls-2"></div>
+            </div>
+        </div>
+        <!--dance monkey-->
+        <audio id = "audio0">
+            <source src="https://media1.vocaroo.com/mp3/18zMLL1GRd53" type="audio/mp3">
+            <source src="https://docs.google.com/uc?export=open&amp;id=10ayhxJNPJQeb9YfphzxOfFZi4vnbJ_Pm" type="audio/mp3">
+        </audio>
+        <!--demons-->
+        <audio id = "audio1">
+            <source src="https://media1.vocaroo.com/mp3/18eQotFDRhyh" type="audio/mp3">
+            <source src="https://docs.google.com/uc?export=open&amp;id=1UYVeyiYBXkCDZXDFJXIcomJfGFnseIMp" type="audio/mp3">
+        </div>
+        <!--shape of you-->
+        <audio id = "audio2">
+            <source src="https://media1.vocaroo.com/mp3/189M80Tig2hs" type="audio/mp3">
+            <source src="https://docs.google.com/uc?export=open&amp;id=1NJfydDfvQ3_zy18RtVo4a13ghpkS63_P" type="audio/mp3">
+        </audio>
+        <!--we don't talk anymore-->
+        <audio id = "audio3">
+            <source src="https://media1.vocaroo.com/mp3/1909WXdXflG1" type="audio/mp3">
+            <audio id = "audio3">
+            <source src="https://docs.google.com/uc?export=open&amp;id=1CWdxSwe6h9qJhJ_4lz3yLfiFWdGyiDm0" type="audio/mp3">
+        </audio>
+        <!--despacito-->
+        <audio id = "audio4">
+            <source src="https://media1.vocaroo.com/mp3/1iwUBMacY3sb" type="audio/mp3">
+            <source src="https://docs.google.com/uc?export=open&amp;id=1gGXrpeYotmTIbOWHrHzSmUPLioE7QgpY" type="audio/mp3">
+        </audio>
+        <!--closer-->
+        <audio id = "audio5">
+            <source src="https://media1.vocaroo.com/mp3/1glRNDl8iwMB" type="audio/mp3">
+            <source src="https://docs.google.com/uc?export=open&amp;id=1IGt5shhTf0lO20UqwwfcL7wVxFbWIylH" type="audio/mp3">
+        </audio>
+        <!--starboy-->
+        <audio id = "audio6">
+            <source src="https://media1.vocaroo.com/mp3/1kmsVpAHXHdW" type="audio/mp3">
+            <source src="https://docs.google.com/uc?export=open&amp;id=1nYQuZYoj0puC4w9vw2Kxh9CcOuGI3gK4" type="audio/mp3">
+        </audio>
+        <!--treat you better-->
+        <audio id = "audio7">
+            <source src="https://media1.vocaroo.com/mp3/1ll5TBprSPB5" type="audio/mp3">
+        </audio>
+        <!--on my way-->
+        <audio id = "audio8">
+            <source src="https://media1.vocaroo.com/mp3/1nJiSW2MBsqJ" type="audio/mp3">
+        </audio>
+        <!--cardigan-->
+        <audio id = "audio9">
+            <source src="https://media1.vocaroo.com/mp3/1cOXpW6dKssz" type="audio/mp3">
+        </audio>
+        <!--alag aasman-->
+        <audio id = "audio10">
+            <source src="https://media1.vocaroo.com/mp3/18hGsmtjEyEb" type="audio/mp3">
+        </audio>
+    </body>
+</html>
+
+
+<!-- 
+
+      ************************************************************
+
+           ++++++++++++++    --------    +++++++++++++++++
+
+{   By ~Aryan Maurya Mr.perfect https://amsrportfolio.netlify.app  }
+
+           ++++++++++++++    --------    +++++++++++++++++
+
+      ************************************************************
+ -->
