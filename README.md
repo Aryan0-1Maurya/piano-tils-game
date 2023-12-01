@@ -4,7 +4,7 @@ Play the mesmerizing Piano Tiles game and create beautiful melodies! 🎹🎵�
 
 ## Play the Game
 
-[Start Playing](https://aryan0-1maurya.github.io/piano-tiles-game/) 🕹️
+[Start Playing](https://aryan0-1maurya.github.io/piano-tils-game/) 🕹️
 
 ## About the Game
 
